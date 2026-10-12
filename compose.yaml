@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: savegas-postgres
+    environment:
+      POSTGRES_USER: savegas
+      POSTGRES_PASSWORD: savegas_dev
+      POSTGRES_DB: savegas
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
